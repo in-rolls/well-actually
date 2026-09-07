@@ -192,3 +192,9 @@ The paper supplies neither tanker tariffs nor the additional water quantity need
 The [village-balance audit](water-balance.md) reports uncertainty for all 28 Table 1 comparisons and prioritizes outcome decomposition, physical geography, historical comparability, and buyer-specific mechanism tests. Local 1991 SHRUG files are available, but a verified survey-to-Census village crosswalk is missing; no historical placebo has been run.
 
 The [magnitude and definition audit](magnitude-benchmarks.md) supplies primary-paper benchmarks, examines village adjustment and settlement, and explains why the missing caste-specific land shares prevent a dominance-cutoff sensitivity check.
+
+**Additional classification checks and independent data**
+
+Reversing each of the 90 village labels in turn leaves the baseline, district-adjusted, buyer interaction, and full nonowner-buyer village gap positive in every case. The district-adjusted confidence interval includes zero in 36 of these hypothetical cases; the buyer-interaction interval does so in three. These are tests of sensitivity to one uncertain label, not actual land-share threshold changes. See the [generated classification audit](dominance-sensitivity.md).
+
+The [independent replication feasibility note](land-records-plan.md) inventories IHDS-II, NSS 77, and 2022 Bihar land records. IHDS supplies contemporaneous village caste land-share reports and water-purchase and pump-ownership measures. Its released household outcomes differ from Anderson's sales measure, and many reported caste shares do not sum to the entire village area. No new-data outcome regression has been run.

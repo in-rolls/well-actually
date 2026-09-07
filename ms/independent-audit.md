@@ -1,0 +1,13 @@
+# Independent agy audit: findings we accept and claims we do not
+
+At the user's request, agy inspected the papers, original programs, our code, tests, and saved outputs at well-actually commit `db9e7a2` and for-better-or-caste commit `09ecc2b`. It used file-reading tools only and did not execute calculations or tests. Its full response is retained in the local marriage repository as `ms/agy-audit-raw.md`. This note records our adjudication, rather than treating the auditor's assertions as verified results.
+
+The audit independently supports the outcome distinction, the need to test buyer versus owner interactions directly, and the need for actual construction information about village dominance. It also correctly cautions that an imprecise buyer-minus-owner difference does not establish equal effects. We retain the full interval and the narrower statement that specificity is not established.
+
+Agy asked for more equal prominence for the two IV bootstrap intervals. The README now reports both: percentile −₹395 to ₹8,982; studentized ₹1,529 to ₹10,447. The detailed review already reported both. We reject the audit's stronger heading that this amounts to failure of the IV estimand: these intervals establish sensitivity and imprecision, not a proven causal bias. Likewise, our assumed direct-effect calculations are not a reproduction of Mellon's full method and do not establish the sign of actual bias.
+
+Agy noticed that dividing the buyer interaction, ₹850.936 per owned acre, by mean high-caste-village household crop sales, ₹1,891.613 per household, gives approximately 44.985%. If this produced the published 45%, it mixes incompatible units. But the archive does not show that calculation. The numerical match is a lead to investigate, not a confirmed author error. We reject the audit's claim that the coincidence proves an exact dimensional blunder, and do not substitute another convenient denominator.
+
+Other overstatements are corrected here: the 54 displayed coefficient/standard-error pairs checked concern Tables 3 and 4, not all Tables 3–5; historical measures predating the survey are not necessarily untreated outcomes for longstanding caste institutions; and the raw UP–Bihar questionnaire records ranks, not the ownership percentages the audit proposed obtaining from that field. The raw observations remain valuable for checking the ranking construction and recovering village geography.
+
+The audit predates the new single-village classification sensitivity and IHDS feasibility checks. Those are separate extensions. No claim in this note relies on the audit's praise or severity labels.

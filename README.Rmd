@@ -25,7 +25,9 @@ pairs checked agree within 0.1 rupee. The water-buyer interaction survives remov
 village. The stronger claim is less secure: the data measure crop sales rather than physical
 yields, three of four direct irrigation differences lose significance when clustered by village, and the
 data do not establish that buyers benefit differently from pump owners. The instrumental-variable
-result also becomes much less precise when both stages are re-estimated in a village bootstrap.
+result is sensitive to inference: the full-procedure village bootstrap gives a percentile interval
+of −₹395 to ₹8,982 and a studentized interval of ₹1,529 to ₹10,447. Both are wide;
+one includes zero and the other does not.
 
 ![Buyer and owner interactions, with their direct comparison](figs/buyers-and-owners.png)
 
@@ -114,3 +116,7 @@ and [independent 2022 Stata reproduction](https://osf.io/h2u96/) provide the com
 See [sources/README.md](sources/README.md) for cached-file provenance.
 
 [Research and writing opportunities arising from the review](ms/research-opportunities.md).
+
+[Village-classification sensitivity](ms/dominance-sensitivity.md) checks every single-village reassignment.
+[Independent replication feasibility](ms/land-records-plan.md) describes the IHDS and NSS surveys and Bihar land records already available locally.
+[Agy audit and our adjudication](ms/independent-audit.md).

@@ -1,0 +1,30 @@
+# External data: initial dictionary, recode ledger and join contract
+
+Status: measurement and feasibility audit only; no outcome regressions. Source documents are the local ICPSR 36151 DS0002 and DS0012 codebooks and questionnaires, NSS 77 Schedule33.1 DDI, and ../land's processing notebooks. Outstanding definitions are explicit below.
+
+| Construct | Source fields | Meaning / universe | Rule or unresolved issue |
+|---|---|---|---|
+| Household and village link | IHDS STATEID, DISTID, PSUID | Sampling geography in household and village files | Composite key; village side unique; do not use PSUID alone. Household IDPSU provides a separate cluster identifier. |
+| Rural residence | URBAN2011 | All interviewed households | Code0 rural; parse numeric factor labels, not R factor positions. |
+| Hindu household / broad caste | ID11, ID13 | All interviewed households | Religion1 Hindu; caste3 OBC,4 SC,5 ST. Inventory includes3:5; final Anderson-like restrictions still to be frozen. |
+| Farm questionnaire eligibility | FM1 | Owns or cultivates agricultural land | No means farm module skipped. A yes can be a landless tenant. Do not convert missing farm answers into zeros indiscriminately. |
+| Purchased irrigation water | FM31; derived FM31RS | Annual rupee expenditure; raw item asked in farm block | Positive raw expenditure is a purchase proxy. Zero/free transfers and missing/skip require separate treatment; derived zero-filled item not interchangeable. |
+| Tubewell / pump ownership | FM40A, FM40B, FM40C | Counts of tubewells, electric pumps, diesel pumps among farm respondents | Any positive is an inventory owner. All missing is unknown, not verified nonownership. Does not identify water sales. |
+| Land conversion | FM3 | Local land units per acre | Divide local-unit areas by positive FM3. Missing/nonpositive conversion is unresolved, not one acre. |
+| Owned / held / cultivated land | FM4A:C, FM7A:C, FM11A:C | Seasonal local-unit acreage | Retain season. FM7 accounts for land leased in/out. Do not divide annual crop value by an arbitrary seasonal denominator without stating it. |
+| Gross crop value | FM22RSHH | Aggregate crop-income/value variable for farm households | Available, but not a verified cash-sales total; component conversion trace still required. |
+| Crop income after expenses | INCCROP | Household aggregate, can be negative | Retain legitimate negatives; does not necessarily deduct every economic opportunity cost. |
+| Crop production / sales / price | Questionnaire FM20–FM25 | Crop × season × irrigation/tenure rows | Asked in questionnaire; corresponding released rows not yet located. Do not infer availability from questionnaire alone. |
+| Village caste/rank/religion | VJ3A:I, VJ4A:I | Listed jatis in village questionnaire | Caste1 Brahmin,2 other Forward,3 OBC,4 SC,5 ST,6 other; religion1 Hindu. Religion and caste must be combined for Hindu upper caste. |
+| Caste agricultural land shares | VJ6A:I | Percent of all village agricultural land owned by listed jati | Validate0–100 and sums; omitted groups leave unresolved land. Never renormalize listed shares to100 for majority classification. |
+| Village population caste shares | VH1A:F | Reported village population percentages | Distinct from land shares; residents distinct from absentee titleholders. |
+| Household weight | WT | IHDS survey weight | Keep explicit; final survey design and stratum construction still to be documented. |
+| NSS land/crop inputs | Block5/5.1;6;7;12; identification block | Household land, crop rows, input rows, asset transactions by visit | Verify each block's universe and item serial codes, annual reference periods and multipliers before constructing outcomes. |
+
+The feasibility recodes are deliberately limited. Missing raw water expenditure is counted as no positive report for the displayed purchase count, not assigned nonbuyer status for a regression. Similarly, no positive pump count is not enough to establish nonownership. Counts are before final analytical restrictions. ICPSR labelled factor codes are extracted from the numeric code printed in parentheses; numeric fields remain numeric.
+
+For land-share coverage, the lower bound on upper-Hindu ownership is the sum assigned to listed Hindu Brahmin/Forward jatis. The upper bound is100 minus land positively assigned to other castes or religions. The remainder includes omitted jatis, missing shares, and uncertain classifications. A threshold comparison is unresolved when the interval straddles the threshold. This bounds the classification conditional on reported values; it does not model errors in the reports.
+
+The land/geography join uses ownership-account identifiers without floating-point conversion: records hold int64 IDs, geography holds16-character strings with leading zeros. Convert the strings to integer64 and verify uniqueness on both sides. The join preserves each matched account once. Exclusions above10,000 acres follow the existing land notebooks, not a new outcome-selected threshold. The checked geography file's builder deduplicates accounts before retaining village information; its asserted claim that no source account spans villages still needs a direct raw-source audit before treating account-level geography as complete.
+
+No link between Anderson IDs and IHDS IDs is intended: these are independent samples. Linking either survey to Census/SHRUG or 2022 land titles requires its own geographic crosswalk and coverage audit. The current internal IHDS join is sufficient for a survey-only independent test, but not for a title-record validation.

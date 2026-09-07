@@ -1,0 +1,43 @@
+# How much rests on the village classification?
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = normalizePath(".."))
+```
+
+```{r values, include=FALSE}
+results <- read.csv("output/dominance_single_flip_summary.csv")
+```
+
+The original village questionnaire asks informants to rank the important castes by total land owned and by average holding size (Section 1A, question 7). It does not record ownership percentages. Ranking the largest landowning group is a reasonable survey question; it requires less information than calculating an exact share. But the largest group can hold less than half. A hypothetical 40/35/25 split illustrates the distinction; it is not a measured split in these villages.
+
+Anderson defines dominance as majority land ownership. She also says the observed comparison is largely between villages with upper-caste residents and villages without them (p. 242). That account could imply a pronounced difference rather than a delicate 49% versus 51% cutoff. The missing construction code prevents us from checking the correspondence. The rank-versus-share distinction is therefore a question to resolve, not proof that the village labels are erroneous or arbitrary.
+
+## A sensitivity check possible with the prepared files
+
+We keep every household, outcome, control, and district assignment fixed. For each of the 90 villages in turn, we reverse its dominance label for all its households and recompute both dominance-by-water-status interactions. We refit the baseline, district-adjusted, and water-interaction specifications, retaining village-clustered HC1 intervals and t inference with 89 degrees of freedom.
+
+```{r results}
+exhibit <- results[, c(
+  "specification", "original_estimate", "smallest_estimate", "largest_estimate",
+  "sign_reversals", "intervals_including_zero"
+)]
+exhibit$specification <- c(
+  "Baseline village gap", "Buyer interaction", "Full nonowner-buyer village gap",
+  "District-adjusted village gap"
+)[match(
+  exhibit$specification,
+  c("baseline", "buyer_interaction", "buyer_village_gap", "district_adjusted")
+)]
+names(exhibit) <- c(
+  "Comparison", "Original ₹/acre", "Smallest ₹/acre", "Largest ₹/acre",
+  "Sign reversals / 90", "Intervals including zero / 90"
+)
+knitr::kable(exhibit, digits = 2, row.names = FALSE)
+```
+
+No single reassignment reverses any of the four point estimates. That is evidence against the association being wholly dependent on one village label. Precision is less stable, particularly for the district-adjusted village coefficient. A confidence interval crossing zero does not establish that the effect vanished, and counting such crossings is not an estimated error probability.
+
+These are hypothetical relabelings, not a reconstruction of plausible alternative ownership cutoffs. We do not know which villages, if any, were misclassified. The exercise does not address errors in several villages, systematic classification differences, or confounding between village types. It also cannot validate a causal water-market interpretation.
+
+Run `make dominance-sensitivity` to regenerate the estimates and report. The [raw-survey follow-up](raw-survey-followup.md) identifies the missing ranking observations and village roster. Actual land shares would be needed to move a numerical ownership cutoff. The [Bihar land-records plan](land-records-plan.md) explains how the separate 2022 records can support an external measurement check.

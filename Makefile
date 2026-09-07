@@ -1,6 +1,6 @@
 R := R_LIBS_USER=$(CURDIR)/.R/library Rscript
 
-.PHONY: run replicate robustness diagnostics report test lint format deps sources
+.PHONY: run replicate robustness diagnostics report test lint format deps sources dominance-sensitivity external-feasibility
 
 run: sources/paper.txt
 	$(R) src/robustness.R
@@ -32,6 +32,8 @@ report:
 
 test:
 	$(R) tests/test_replication.R
+	$(R) tests/test_dominance_sensitivity.R
+	$(R) tests/test_external_feasibility.R
 
 lint:
 	$(R) -e 'x <- lintr::lint_dir("."); print(x); stopifnot(length(x) == 0L)'
@@ -50,3 +52,11 @@ sources/paper.pdf:
 
 sources/paper.txt: sources/paper.pdf
 	pdftotext -layout sources/paper.pdf sources/paper.txt
+
+dominance-sensitivity:
+	$(R) src/dominance_sensitivity.R
+	$(R) -e 'knitr::knit("ms/dominance-sensitivity.Rmd", output = "ms/dominance-sensitivity.md", quiet = TRUE)'
+
+external-feasibility:
+	$(R) src/ihds_feasibility.R
+	$(R) src/land_readiness.R
