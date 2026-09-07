@@ -122,3 +122,13 @@ test_that("water-hauling budget uses consistent depth, area, and annual units", 
     tab$annual_sales_difference_per_owned_acre
   )
 })
+
+
+test_that("land ownership comparisons retain the full main sample", {
+  ownership <- read.csv("output/land_ownership_checks.csv")
+  raw <- ownership[ownership$variable == "owns_land" & ownership$adjustment == "unadjusted", ]
+  expect_equal(raw$n_low * raw$mean_low, 536)
+  expect_equal(raw$n_high * raw$mean_high, 414)
+  expect_equal(raw$difference, 536 / 704 - 414 / 591)
+  expect_true(all(ownership$n == 1295 & ownership$villages == 90))
+})

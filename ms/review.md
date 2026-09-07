@@ -88,7 +88,7 @@ Using village area, natural-water availability, and their dominance interactions
 
 More fundamentally, village area and access to canals, rivers, ponds, or lakes plausibly affect agricultural sales through routes other than the binary decision to purchase groundwater. Their exclusion from the sales equation is therefore substantive. Balance between caste-dominance groups does not establish exclusion. Nor does historical persistence establish that the locations chosen by landlords and cultivators were unrelated to subsequent agricultural opportunities. There are no historical village observations in the package with which to test that claim.
 
-Even the balance evidence is not an equivalence test: the 95% interval for the village-area difference is approximately −177 to +175 hectares, and for natural-water availability it is −10.9 to +30.5 percentage points. Failure to reject zero leaves economically meaningful differences possible.
+Even the balance evidence is not an equivalence test: the 95% interval for the village-area difference is approximately −172 to +170 hectares, and for natural-water availability it is −10.9 to +30.6 percentage points. Failure to reject zero leaves economically meaningful differences possible.
 
 **The proposed mechanism remains plausible but unmeasured**
 
@@ -187,3 +187,8 @@ A tanker calculation starts with volume. One millimetre of water over an acre re
 These are survey-period rupees and break-even calculations, not tanker-price quotes. They assume the whole estimated sales difference is recoverable, the watered acre corresponds to an owned acre, no other production costs increase, and existing water payments are not saved. If hauling replaces paid groundwater, those avoided payments would also contribute to the budget; extra production costs would reduce it. Multiple watering rounds would consume more of the annual budget. The regression uncertainty is substantial: its 95% interval for the sales difference is ₹146–₹1,379. At 50 mm, that translates into roughly ₹7–₹66 per whole load under the same assumptions. It does not include uncertainty about water requirements or causal identification. [Reproducible calculations](../output/irrigation_break_even.csv).
 
 The paper supplies neither tanker tariffs nor the additional water quantity needed to recover the sales gap. We therefore cannot conclude that hauling would or would not have been profitable. Nor should tankers stand in for every alternative: a nearby pipe or channel could have a different cost, and a small timely watering might have a different return from supplying an entire season. The empirical question remains whether a feasible profitable alternative was blocked by caste.
+
+
+The [village-balance audit](water-balance.md) reports uncertainty for all 28 Table 1 comparisons and prioritizes outcome decomposition, physical geography, historical comparability, and buyer-specific mechanism tests. Local 1991 SHRUG files are available, but a verified survey-to-Census village crosswalk is missing; no historical placebo has been run.
+
+The [magnitude and definition audit](magnitude-benchmarks.md) supplies primary-paper benchmarks, examines village adjustment and settlement, and explains why the missing caste-specific land shares prevent a dominance-cutoff sensitivity check.

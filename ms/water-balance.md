@@ -1,0 +1,75 @@
+
+
+# Could broader village differences explain the crop-sales gap?
+
+The concern is that caste dominance marks differences in agricultural opportunity as well as water trading. The outcome makes that concern especially relevant: money from crop sales per acre owned can change when farmers grow different crops, receive different prices, sell a different share of their harvest, or cultivate a different amount of land relative to what they own. It is not a direct measure of physical productivity.
+
+These are exploratory checks prompted by the published result and our replication. They were not specified before seeing the estimates.
+
+## What the paper already checks
+
+Anderson's Table 1 compares village amenities, crop prices, and reported soil and water conditions. Sections VI.B–E discuss groundwater, tenancy and credit, land quality, and land size (pp. 258–261). The regressions include several corresponding controls. The criticism should therefore concern what these checks establish and what they miss, rather than claim that none were done.
+
+Here are selected reproduced Table 1 comparisons. Positive differences mean a higher value in lower-caste-dominated villages. Intervals use the same village-clustered calculation as our replication; there is one observation per village. The CSV reports all 28 comparisons, standardized differences, sample sizes, and Holm-adjusted p-values for that family.
+
+
+|Measure                                  |Difference |95% interval    | Villages|
+|:----------------------------------------|:----------|:---------------|--------:|
+|Village area (hectares)                  |-1.1       |[-172.3, 170.2] |       84|
+|Natural-water access (percentage points) |9.8        |[-10.9, 30.6]   |       90|
+|Paved road (percentage points)           |-15.2      |[-36.1, 5.8]    |       90|
+|No flood problem (percentage points)     |-5.4       |[-26.3, 15.6]   |       90|
+|No waterlogging (percentage points)      |9.2        |[-11.9, 30.3]   |       90|
+|Paddy price (rupees per 100 kg)          |20.8       |[-21.5, 63.1]   |       73|
+
+An interval spanning zero does not show that two groups are closely comparable. For example, the natural-water comparison permits a substantial advantage or disadvantage. These intervals are pointwise, not simultaneous equivalence bounds. A joint balance test would also be a diagnostic, not proof that unmeasured agricultural opportunity is balanced. Caste dominance was not randomly assigned.
+
+## The checks worth doing next
+
+| Priority | Check | What it would tell us | Current limit |
+|---|---|---|---|
+| 1 | Separate crop-specific physical output, prices, share sold, and cultivated versus owned acreage. Include crops retained for consumption. | A sales gap without a physical-output gap changes the claim from productivity to commercialization, crop choice, prices, or land use. Those could still respond to water access. | The supplied prepared files lack the quantities and complete land-use accounting needed for this decomposition. Restricting to positive sellers changes the selected population. |
+| 2 | Compare soil texture, slope, elevation, aquifer characteristics and long-run climate within districts. | Differences could explain farming returns independently of water-trading restrictions. | The paper has coarse reported environmental indicators and district controls. Detailed village or plot geography needs a verified geographic link. Soil degradation and measured groundwater levels can themselves respond to farming. |
+| 3 | Compare 1991 irrigation sources, agricultural electricity, transport and market access, population, literacy, and occupations. | Shows whether the groups already differed in productive capacity and commercialization before the 1997–98 survey. | Historical SHRUG files exist, but the survey-to-Census link is missing. Earlier is not automatically untreated: caste dominance predates 1991. |
+| 4 | Test whether the village gap is larger for water buyers than for pump owners; then examine rain-fed crops and farmers with reliable independent supply. | A similar gap in groups less exposed to purchased-water restrictions would weaken the proposed mechanism. | The buyer-minus-owner comparison is already estimated and imprecise. Pump ownership and crop choice are selected; owners can also sell water, so neither is a perfect unaffected group. |
+| 5 | Measure actual buyers and sellers, delivered water, timing, prices, field distances, and nearby alternative suppliers. | Tests whether caste changes trading terms, and whether those changes are large enough to explain the revenue gap. | These transaction and delivery records are absent. Village dominance is not the caste of an observed trading partner. |
+
+The existing direct buyer-minus-owner comparison is ₹462 per owned acre, with a 95% interval from ₹-758 to ₹1,683 (p = 0.454). That does not establish a buyer-specific advantage, but the wide interval also cannot establish that buyers and owners benefit equally.
+
+Within-district historical comparisons should report group means, differences with intervals, standardized differences, and overlap before adding controls. Adjustment should use a fixed sample so missingness is not confused with attenuation. Historical infrastructure and income-related measures can be consequences of longstanding caste dominance: adding them changes the question and may remove part of that broader effect. Report such adjustment as a sensitivity exercise with its causal assumptions stated.
+
+## Land ownership is a possible outcome too
+
+Longstanding differences in agricultural returns can change migration, settlement, land demand, ownership, tenancy and investment. Conversely, historical land institutions can influence caste dominance and current agricultural returns. The cross-section cannot determine which direction explains an association. Treating current ownership or land prices as automatically exogenous controls would assume away part of this question. Equal land prices could also coexist with different returns if land markets are restricted; lack of capitalization would need an institutional explanation rather than by itself refute the result.
+
+The following comparisons use the main regression's 1,295 lower-caste households in 90 villages. They include landless households. This differs from the paper's comparisons of plot size conditional on owning land and tenancy conditional on cultivation. Positive differences mean higher values in lower-caste-dominated villages.
+
+
+|Measure                      |Lower-caste dominance |Upper-caste dominance |Difference |95% interval for difference |
+|:----------------------------|:---------------------|:---------------------|:----------|:---------------------------|
+|Owns any land (%)            |76.1                  |70.1                  |6.1        |[-2.6, 14.7]                |
+|Owned acres, including zeros |2.4                   |2.0                   |0.4        |[-0.5, 1.3]                 |
+|Tenant (%)                   |23.3                  |27.2                  |-3.9       |[-12.1, 4.2]                |
+|Owns pump (%)                |17.5                  |9.0                   |8.5        |[2.2, 14.8]                 |
+|Literate (%)                 |47.2                  |33.3                  |13.8       |[6.3, 21.4]                 |
+
+With district and household caste-category controls, the land-ownership difference is 3.2 percentage points, with a 95% interval of [-4.4, 10.9]. These are descriptive and adjustment-sensitive comparisons, not causal estimates or unaffected placebo outcomes. Each interval is pointwise; the CSV also reports Holm adjustment within each set of five tests. All ten regressions use the same households. The ownership regression deliberately does not control for owned acreage, which defines its outcome.
+
+A stronger follow-up would track ownership, cultivated area, land prices, population and occupational composition over time, alongside irrigation investment and crop output. A persistent productive advantage should have implications for those margins under specified assumptions about land access, migration and investment. Which households capture the gains also matters. SHRUG can help with some village-level margins, but does not supply the household ownership histories or plot geometry needed for the complete test.
+
+## Historical SHRUG data we actually have
+
+Local cache: `~/data/shrug/2.0`. Headers inspected September 6, 2026:
+
+| File | Verified columns useful here |
+|---|---|
+| `shrug-vd91-csv/pc91_vd_clean_shrid.csv.zip` | `pc91_vd_tot_irr`, `pc91_vd_un_irr`, irrigation-source area columns (`canal_govt`, `canal_pvt`, `well_w_el`, `well_wo_el`, `tw_w_el`, `tw_wo_el`, `river_irr`), `pc91_vd_power_agr`, `pc91_vd_dist_town`, `pc91_vd_app_pr`, `pc91_vd_mrkt_fac`, `pc91_vd_bs_fac`, `pc91_vd_rs_fac`. |
+| `shrug-pca91-csv/pc91_pca_clean_shrid.csv.zip` | Population, households, literacy, Scheduled Caste and Scheduled Tribe population, cultivators, agricultural laborers, and occupation counts (`pc91_pca_tot_p`, `pc91_pca_no_hh`, `pc91_pca_p_lit`, `pc91_pca_p_sc`, `pc91_pca_p_st`, `pc91_pca_main_cl_p`, `pc91_pca_main_al_p`). |
+| `shrug-ec90-csv/ec90_shrid.csv.zip` | Local 1990 Economic Census archive exists. Its district aggregate has employment and establishment counts; verify village definitions and coverage before analysis. |
+| `shrug-pc-keys-csv/pc91r_shrid_key.csv` | `shrid2` and the full 1991 Census state, district, subdistrict, and village identifiers. |
+
+Some Village Directory water-source fields concern drinking water. Use the explicitly irrigation-related area fields for agricultural water, after checking the codebook, units and missing-value codes. These filenames and column names establish availability, not that a merge or historical test has been completed. SC/ST shares also do not reproduce the paper's caste categories or land-dominance classification.
+
+The Anderson files contain survey village serial numbers and unlabeled district indicators, but no verified Census village codes, names, or coordinates. We need a crosswalk from the survey village ID to Census identifiers, or a village roster with sufficiently precise names and locations to build and validate one. The paper used 2001 Census amenities, so a link existed for its analysis; it is not supplied in this replication archive. Serial numbers must not be joined directly to Census village codes. Village boundary changes and SHRUG aggregation also need auditing once that link is available.
+
+No historical placebo has been run. Historical differences would be evidence of persistent differences between the groups, not by themselves proof of omitted-variable bias. Passing these checks would narrow the competing explanations; it would not validate the IV exclusion restriction or establish the claimed 45% productivity effect.

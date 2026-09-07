@@ -35,6 +35,9 @@ A significant buyer interaction and an insignificant owner interaction do not es
 difference between them: the direct test has p = `r num(contrast$p[3], 3)`.
 
 The argument and all twelve review checks are in [the review](ms/review.md).
+The [village balance and historical-data audit](ms/water-balance.md) shows what the
+existing comparisons rule out, which 1991 SHRUG variables are available, and why the
+missing survey-to-Census crosswalk prevents historical checks.
 
 | Check | Result | Evidence |
 |---|---:|---|
@@ -54,6 +57,9 @@ But the measured outcome is **money from crops sold per acre owned**. Higher sal
 more production, different crops or prices, or selling more of the harvest instead of consuming it.
 The regressions reproduce a positive crop-sales gap; they do not directly measure a 45% increase
 in physical crop yields. The supplied code also does not show how the rupee estimates become 45%.
+The [magnitude comparison](ms/magnitude-benchmarks.md) checks the claim against Kerala
+fishing markets, groundwater contracting, and canal irrigation, keeping the different outcomes
+and comparison groups explicit. It also audits what we know about the dominance cutoff.
 
 Attributing the gap to caste barriers requires another step: establishing that other differences
 between the villages do not explain it. The buyer–seller pairs, water prices, and delivery records

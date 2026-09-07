@@ -15,3 +15,12 @@ replication files are included under `data/original/` with their original licens
 
 The supplemental 2005 PDF is not an input to the calculations. Neither that draft nor the
 2022 reproduction is used as a substitute for the final published tables.
+
+
+Additional papers retrieved on 2026-09-06 for substantive benchmarks (PDFs and extracted text cached locally, excluded from git):
+
+- `jensen-2007.pdf` and `.txt`: [Jensen's published Kerala fisheries paper](https://web.stanford.edu/class/comm1a/readings/jensen-digital-divide.pdf), especially pp. 883 and 914–917, Table VIII. No underlying Kerala survey data obtained.
+- `gine-jacoby-2020.pdf` and `.txt`: [Giné and Jacoby's published groundwater-contracting paper](https://www.econstor.eu/bitstream/10419/217191/1/0720-3479-1-PB.pdf), especially Sections 6.2–6.3. Use the detailed body and Table 10 for precisely defined welfare quantities.
+- `asher-canals.pdf` and `.txt`: [Asher, Campion, Gollin and Novosad's May 1, 2024 working paper](https://paulnovosad.com/pdf/acgn-canals.pdf), especially the introduction and Section 6.1. This is the retrieved version, not a claim about final publication status.
+
+The benchmark note also cites [Sekhri (2014)](https://www.aeaweb.org/articles?id=10.1257/app.6.3.76), for which the publisher abstract was read; no full-paper audit is claimed.
