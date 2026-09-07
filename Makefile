@@ -1,6 +1,6 @@
 R := R_LIBS_USER=$(CURDIR)/.R/library Rscript
 
-.PHONY: run replicate robustness diagnostics report test lint format deps sources dominance-sensitivity external-feasibility ihds-replication ihds-report precision
+.PHONY: run replicate robustness diagnostics report test lint format deps sources dominance-sensitivity external-feasibility ihds-replication ihds-report precision land-measurement land-prefix
 
 run: sources/paper.txt
 	$(R) src/robustness.R
@@ -37,6 +37,7 @@ test:
 	$(R) tests/test_external_feasibility.R
 	$(R) tests/test_ihds_replication.R
 	$(R) tests/test_precision_audit.R
+	$(R) tests/test_land_dominance.R
 
 lint:
 	$(R) -e 'x <- lintr::lint_dir("."); print(x); stopifnot(length(x) == 0L)'
@@ -78,3 +79,12 @@ ihds-report:
 precision: replicate
 	$(R) src/precision_audit.R
 	$(R) -e 'knitr::knit("README.Rmd", output = "README.md", quiet = TRUE)'
+
+land-measurement:
+	$(R) src/land_geography_audit.R
+	$(R) src/land_dominance.R
+
+land-prefix: land-measurement
+	$(R) src/land_prefix_audit.R
+	$(R) -e 'source("src/land_dominance.R"); write_land_dominance("output/land_account_locations_prefix.parquet", "output/land_prefix")'
+	$(R) -e 'source("src/land_prefix_audit.R"); compare_land_geography()'

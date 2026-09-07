@@ -14,3 +14,7 @@ sources/asher-canals.txt
 sources/gine-jacoby-2020.txt
 sources/up-bihar-village-questionnaire.txt
 sources/up-bihar-metadata.xml
+output/land_account_locations.parquet
+output/land_village_ownership.parquet
+output/land_account_locations_prefix.parquet
+output/land_prefix/*.parquet
