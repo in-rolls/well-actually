@@ -1,0 +1,79 @@
+"contrast","draws","p_value","lower","upper","status","reason","pseudo_inverse_warnings","warnings","p_holm"
+"buyer_gap",999,0.269269269269269,NA,NA,"estimated","",11,"Please note that the seeding behavior for random number generation for
+`boottest()` has changed with `fwildclusterboot` version 0.13.
+
+It will no longer be possible to exactly reproduce results produced by versions
+lower than 0.13.
+
+If your prior results were produced under sufficiently many bootstrap
+iterations, none of your conclusions will change. For more details about this
+change, please read the notes in
+[news.md](https://cran.r-project.org/web/packages/fwildclusterboot/news/news.html).
+This warning is displayed once per session. | Matrix inversion error when computing beta(g) for cluster 20. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`. | Matrix inversion error when computing beta(g) for cluster 33. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`. | Matrix inversion error when computing beta(g) for cluster 34. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`. | Matrix inversion error when computing beta(g) for cluster 37. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`. | Matrix inversion error when computing beta(g) for cluster 38. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`. | Matrix inversion error when computing beta(g) for cluster 46. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`. | Matrix inversion error when computing beta(g) for cluster 47. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`. | Matrix inversion error when computing beta(g) for cluster 62. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`. | Matrix inversion error when computing beta(g) for cluster 71. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`. | Matrix inversion error when computing beta(g) for cluster 76. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`. | Matrix inversion error when computing beta(g) for cluster 77. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`.",0.538538538538539
+"buyer_minus_owner",999,0.447447447447447,NA,NA,"estimated","",11,"Matrix inversion error when computing beta(g) for cluster 20. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`. | Matrix inversion error when computing beta(g) for cluster 33. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`. | Matrix inversion error when computing beta(g) for cluster 34. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`. | Matrix inversion error when computing beta(g) for cluster 37. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`. | Matrix inversion error when computing beta(g) for cluster 38. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`. | Matrix inversion error when computing beta(g) for cluster 46. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`. | Matrix inversion error when computing beta(g) for cluster 47. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`. | Matrix inversion error when computing beta(g) for cluster 62. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`. | Matrix inversion error when computing beta(g) for cluster 71. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`. | Matrix inversion error when computing beta(g) for cluster 76. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`. | Matrix inversion error when computing beta(g) for cluster 77. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`.",0.538538538538539

@@ -1,5 +1,7 @@
 # An independent replication with data already in ../land
 
+The [initial IHDS replication is now completed](ihds-replication.md). The plan below records its data requirements and the remaining extensions.
+
 The strongest immediate candidate is IHDS-II, an independent 2011–12 household and village survey. Anderson used the 1997–98 World Bank UP–Bihar survey; she did not collect that survey herself. IHDS-II did not supply her data. The 2022 Bihar land records and NSS 77 (2018–19) offer additional measurements, with different strengths and limits.
 
 This is a feasibility assessment and proposed design, not an executed outcome analysis or a frozen pre-analysis plan. We have examined questionnaires, codebooks, variable availability, sample counts, village joins, and reported caste-share coverage. We have not estimated an association between dominance and farm outcomes in these new data.
