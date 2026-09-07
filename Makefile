@@ -1,11 +1,12 @@
 R := R_LIBS_USER=$(CURDIR)/.R/library Rscript
 
-.PHONY: run replicate robustness diagnostics report test lint format deps sources dominance-sensitivity external-feasibility ihds-replication ihds-report
+.PHONY: run replicate robustness diagnostics report test lint format deps sources dominance-sensitivity external-feasibility ihds-replication ihds-report precision
 
 run: sources/paper.txt
 	$(R) src/robustness.R
 	$(R) src/diagnostics.R
 	$(R) src/compare_published.R
+	$(R) src/precision_audit.R
 	$(R) src/village_design.R
 	$(R) src/iv_lal_review.R
 	$(R) src/iv_exclusion_sensitivity.R
@@ -35,6 +36,7 @@ test:
 	$(R) tests/test_dominance_sensitivity.R
 	$(R) tests/test_external_feasibility.R
 	$(R) tests/test_ihds_replication.R
+	$(R) tests/test_precision_audit.R
 
 lint:
 	$(R) -e 'x <- lintr::lint_dir("."); print(x); stopifnot(length(x) == 0L)'
@@ -72,3 +74,7 @@ ihds-replication:
 ihds-report:
 	$(R) src/ihds_replication_figure.R
 	$(R) -e 'knitr::knit("ms/ihds-replication.Rmd", output = "ms/ihds-replication.md", quiet = TRUE)'
+
+precision: replicate
+	$(R) src/precision_audit.R
+	$(R) -e 'knitr::knit("README.Rmd", output = "README.md", quiet = TRUE)'

@@ -1,0 +1,35 @@
+"contrast","method","draws","seed","p_value","lower","upper","pseudo_inverse_warnings","warnings"
+"buyer_gap","fnw11",9999,113779,0.0173017301730173,105.719313609635,1496.74510967314,0,"Please note that the seeding behavior for random number generation for
+`boottest()` has changed with `fwildclusterboot` version 0.13.
+
+It will no longer be possible to exactly reproduce results produced by versions
+lower than 0.13.
+
+If your prior results were produced under sufficiently many bootstrap
+iterations, none of your conclusions will change. For more details about this
+change, please read the notes in
+[news.md](https://cran.r-project.org/web/packages/fwildclusterboot/news/news.html).
+This warning is displayed once per session."
+"buyer_gap","31",9999,113779,0.0219021902190219,NA,NA,2,"Matrix inversion error when computing beta(g) for cluster 22. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`. | Matrix inversion error when computing beta(g) for cluster 42. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`."
+"buyer_interaction","fnw11",9999,113779,0.0014001400140014,291.806500609935,1420.85134460356,0,""
+"buyer_interaction","31",9999,113779,0.0013001300130013,NA,NA,2,"Matrix inversion error when computing beta(g) for cluster 22. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`. | Matrix inversion error when computing beta(g) for cluster 42. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`."
+"buyer_minus_owner","fnw11",9999,113779,0.516651665166517,-684.715800963873,1717.81673802024,0,""
+"buyer_minus_owner","31",9999,113779,0.509250925092509,NA,NA,2,"Matrix inversion error when computing beta(g) for cluster 22. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`. | Matrix inversion error when computing beta(g) for cluster 42. Using
+Pseudo-Inverse instead. Potentially, you can suppress this message by
+specifying a cluster fixed effect in the bootstrap via the `fe` argument of
+`boottest()`."

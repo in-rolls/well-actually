@@ -50,6 +50,20 @@ The cached intermediate has 11,688,307 ownership accounts. Following the existin
 The land register does not contain landless households, realized crop outcomes, water purchases, or confirmed household residence in the village where a title is held. Administrative accounts are not necessarily people or households. The 2022 records cannot be treated as a baseline covariate for a 2011 or 1997 outcome. An external measurement validation requires an audited village-name/geographic crosswalk plus explicit treatment of date changes and unmatched areas. Do not replace missing survey geography with a district-wide exposure.
 
 
+### Combining land records with IHDS outcomes
+
+This would replace the survey's collective report of caste land ownership with an exposure constructed from administrative records. For verified common villages, compare survey and recorded shares, largest-group and majority classifications, continuous shares and 40/50/60% cutoffs. Re-estimate the IHDS buyer comparison on exactly the same matched households with each exposure, retaining the separate owned-area and cultivated-area outcomes. Report unmatched villages and unclassified acreage. The replacement is a measurement check; it does not make caste dominance exogenous or constitute an IV first stage.
+
+The local linkage inspection on 2026-09-07 found:
+
+- `../land/scripts/crosswalk_district_block_village.ipynb` references `data/br_lr_census_crosswalk.dta`, described as supplied by Aaditya. That input is absent from the inspected local data directory. The notebook joins land-record district/block/village names to Census geography; it does not supply an IHDS link.
+- IHDS DS0002, DS0011 and DS0012 contain internal state/district/PSU identifiers. DS0012 also contains `VILL`, labelled village code, but it has only 29 distinct values across 1,410 rows. The inspected files provide no verified Census village identifier or village-name crosswalk. The user guide (pp. 11–12) describes `IDPSU` as a constructed survey-cluster identifier.
+- The `census_village_surname_jati.parquet` and `surname_census_bridge.parquet` files are Mahadalit-census surname/jati lookup products, not IHDS-to-Census geographic crosswalks.
+
+The administrative records cover Bihar. IHDS-II contains 1,085 rural Bihar households in 60 villages before farming and caste restrictions; linked analytical support can only be smaller. The records were collected in 2022, whereas IHDS outcomes refer to 2011–12. A linked comparison would therefore require evidence on record vintages and ownership changes; without it, later recorded ownership cannot be treated as a predetermined cause of earlier outcomes. A geographic crosswalk would also permit historical Census/SHRUG balance checks, but those links have not been executed.
+
+**Status:** survey-only IHDS replication complete; combined administrative-exposure/IHDS-outcome analysis not run. The immediate missing inputs are the IHDS village crosswalk and the referenced land-to-Census crosswalk, followed by verification of village boundaries, record coverage and dates.
+
 ### NSS 77 (2018–19)
 
 The repository contains the raw Nesstar source, DDI dictionary, and 35 converted block files for two visits, not just the household land summary. The Bihar first-visit extract contains 5,111 households. Crop blocks distinguish irrigated and unirrigated area and production and record sales quantities; irrigation-source categories are also available. This makes NSS useful for checking whether large revenue differences reflect physical output, crop mix, commercialization, or land denominators.

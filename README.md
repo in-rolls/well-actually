@@ -6,14 +6,18 @@ A replication and review of Siwan Anderson’s
 [“Caste as an Impediment to Trade”](https://www.aeaweb.org/articles?id=10.1257/app.3.1.239)
 (AEJ: Applied Economics, 2011). Groundwater, caste, and a second look at the evidence.
 
-The main coefficients reproduce. All 54 displayed coefficient/standard-error
-pairs checked agree within 0.1 rupee. The water-buyer interaction survives removing any one
-village. The stronger claim is less secure: the data measure crop sales rather than physical
-yields, three of four direct irrigation differences lose significance when clustered by village, and the
-data do not establish that buyers benefit differently from pump owners. The instrumental-variable
-result is sensitive to inference: the full-procedure village bootstrap gives a percentile interval
-of −₹395 to ₹8,982 and a studentized interval of ₹1,529 to ₹10,447. Both are wide;
-one includes zero and the other does not.
+**The regressions reproduce a positive crop-sales association. Its size and causal explanation remain uncertain.**
+All 54 displayed coefficient/standard-error pairs checked agree within 0.1 rupee.
+The estimated gap for lower-caste water buyers without pumps is **₹763
+more crop sales per owned acre per year** in lower-caste-dominated villages. The published inference
+method gives a 95% interval of **₹146–₹1,379**.
+A correction for limited and uneven village information widens it to
+**₹55–₹1,471**. That supports a positive
+association, with substantial uncertainty about its magnitude.
+
+The outcome is money from crops sold per acre owned. Physical yields, profits and losses caused
+by caste barriers require additional evidence. The buyer interaction survives removing any one
+village, but the data do not establish that the village gap is larger for buyers than for pump owners.
 
 ![Buyer and owner interactions, with their direct comparison](figs/buyers-and-owners.png)
 
@@ -30,6 +34,7 @@ missing survey-to-Census crosswalk prevents historical checks.
 | Check | Result | Evidence |
 |---|---:|---|
 | Baseline village-dominance coefficient | ₹566.5 (SE 209.0) | [Reproduction](output/published_regression_comparison.csv) |
+| Full village gap for nonowner water buyers, corrected interval | ₹763 [₹55, ₹1,471] | [Precision audit](output/precision_ladder.csv) |
 | Water-buyer interaction | ₹850.9 (SE 275.0) | [OLS tables](output/ols_tables.csv) |
 | Buyer minus owner interactions | ₹462.4 (SE 614.2), p = 0.454 | [Direct contrasts](output/water_contrasts.csv) |
 | District-adjusted village coefficient, wild bootstrap | p = 0.062 | [Wild bootstrap](output/wild_bootstrap.csv) |
@@ -37,14 +42,39 @@ missing survey-to-Census crosswalk prevents historical checks.
 | IV interaction, village pairs bootstrap | 95% percentile interval [₹-395, ₹8,982] | [Full-procedure bootstrap](output/iv_pairs_bootstrap.csv) |
 | Three published sample sizes | 1,295 printed; 1,127, 1,122, and 1,127 used | [Sample comparison](output/published_sample_comparison.csv) |
 
-These are reproduction and sensitivity results from the original sample, not an independent
-new-data replication. The IV percentile interval is not a weak-instrument-robust confidence set.
-Anderson reports that lower-caste water buyers have **45% higher agricultural yields** in
-villages where lower castes own most of the land than in villages dominated by upper castes.
-But the measured outcome is **money from crops sold per acre owned**. Higher sales could reflect
-more production, different crops or prices, or selling more of the harvest instead of consuming it.
-The regressions reproduce a positive crop-sales gap; they do not directly measure a 45% increase
-in physical crop yields. The supplied code also does not show how the rupee estimates become 45%.
+**What does the 45% claim establish?** Anderson describes lower-caste water buyers as having
+45% higher agricultural yields in lower-caste-dominated villages (p. 253). The supplied program
+reproduces rupee coefficients but does not show the calculation behind that percentage. The paper's
+45% statement has no accompanying percentage confidence interval. We therefore report the
+reconstructed rupee contrast and its uncertainty. The supplied files do not establish how precisely
+the 45% figure is estimated.
+
+The published regression standard errors already account for village clustering and reproduce
+under the stated method. The buyer interaction alone is ₹851
+(SE ₹275); the actual village gap for nonowner buyers also
+includes the village coefficient. That full contrast is ₹763
+(SE ₹310), using both variances and their covariance. The larger
+uncertainty belongs alongside the substantive buyer comparison.
+
+The correction for limited village information (CR2 with Satterthwaite inference) gives about
+**33 degrees of freedom** for Anderson's buyer gap. The corresponding
+IHDS calculation has **6.8**, because its relevant comparison cells are much
+sparser. These are contrast-specific calibrations of uncertainty, not counts of villages. Anderson
+has nonowner buyers in 44
+upper-dominated and 42
+lower-dominated villages. The original sample therefore has broader buyer support than IHDS.
+
+A separate 9,999-draw wild village bootstrap gives a full buyer-gap interval of
+**₹106–₹1,497**. The ordinary and
+small-sample-corrected intervals and both bootstrap variants support a positive association;
+none makes its size precise. These procedures quantify sampling uncertainty within the model.
+They do not resolve classification errors, unmeasured village differences or the water-trading mechanism.
+[All precision checks](output/precision_ladder.csv), [bootstrap results](output/precision_wild_bootstrap.csv).
+
+Higher sales per owned acre can reflect more land cultivated through leasing, repeated crop
+seasons, crop choice, prices, or selling more of the harvest. It need not mean greater physical
+output for the same crop on the same acreage. These are reproduction and sensitivity results
+from the original sample; the separate IHDS check is linked below.
 The [magnitude comparison](ms/magnitude-benchmarks.md) checks the claim against Kerala
 fishing markets, groundwater contracting, and canal irrigation, keeping the different outcomes
 and comparison groups explicit. It also audits what we know about the dominance cutoff.
@@ -68,7 +98,9 @@ it does not recover the original survey weights.
 Following the checks discussed by Lal, Lockhart, Xu, and Zu, I compared IV and OLS on the same
 1,127 households in 80 villages and bootstrapped the complete estimation procedure.
 The IV interaction is 3.85 times the OLS interaction, but their difference is imprecisely estimated.
-The two bootstrap intervals disagree about whether zero is excluded. See the
+The IV percentile interval is −₹395 to ₹8,982; its studentized interval is ₹1,529 to ₹10,447.
+Both are wide, and they disagree about whether zero is excluded. The percentile interval is not a
+weak-instrument-robust confidence set. See the
 [IV results](output/iv_lal_bootstrap_summary.csv) and [explanation](ms/review.md).
 
 Run from the repository root:
