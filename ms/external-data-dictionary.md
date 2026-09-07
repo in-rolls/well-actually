@@ -1,6 +1,6 @@
 # External data: initial dictionary, recode ledger and join contract
 
-Status: measurement and feasibility audit only; no outcome regressions. Source documents are the local ICPSR 36151 DS0002 and DS0012 codebooks and questionnaires, NSS 77 Schedule33.1 DDI, and ../land's processing notebooks. Outstanding definitions are explicit below.
+Status: initial inventory with definitions resolved for the separate [IHDS analysis plan](ihds-replication-plan.md). Source documents are the local ICPSR 36151 DS0002 and DS0012 codebooks and questionnaires, NSS 77 Schedule33.1 DDI, and ../land's processing notebooks. Outstanding definitions are explicit below.
 
 | Construct | Source fields | Meaning / universe | Rule or unresolved issue |
 |---|---|---|---|
@@ -28,3 +28,11 @@ For land-share coverage, the lower bound on upper-Hindu ownership is the sum ass
 The land/geography join uses ownership-account identifiers without floating-point conversion: records hold int64 IDs, geography holds16-character strings with leading zeros. Convert the strings to integer64 and verify uniqueness on both sides. The join preserves each matched account once. Exclusions above10,000 acres follow the existing land notebooks, not a new outcome-selected threshold. The checked geography file's builder deduplicates accounts before retaining village information; its asserted claim that no source account spans villages still needs a direct raw-source audit before treating account-level geography as complete.
 
 No link between Anderson IDs and IHDS IDs is intended: these are independent samples. Linking either survey to Census/SHRUG or 2022 land titles requires its own geographic crosswalk and coverage audit. The current internal IHDS join is sufficient for a survey-only independent test, but not for a title-record validation.
+
+## IHDS replication recode and join resolution
+
+The frozen plan uses Hindu OBC/SC farm households, positive maximum owned acreage across three fully observed seasons, and explicit FM3 conversion. Cultivated acreage is the sum of three fully observed seasons. Pump nonownership requires three reported zeros; any observed positive establishes ownership unless an invalid negative is present. Missing values never establish nonbuying/nonownership. Complete-case regression exclusions are recorded in `ihds_sample_flow.csv`, field/skip missingness by exposure in `ihds_measurement_missingness.csv`, and categorical recodes in `ihds_recode_*.csv`.
+
+Household IDHH is unique; the full state–district–PSU village key is unique on DS12. The household-left join preserves42,152 rows; all3,789 rural UP/Bihar households link. DS14 participant records are aggregated before the village join and cannot multiply households. Four duplicate participant-key rows occur outside UP/Bihar and are excluded from roster aggregation; target-state participant keys are unique. The target195 villages all have a roster. Input SHA256 values are in `ihds_input_provenance.csv`; no household-level extract is redistributed.
+
+The outcome is the released FM22RSHH crop-value aggregate, which the user guide lists separately from residue and expenses. Its crop-row construction remains unavailable. INCCROP explicitly subtracts expenses and may be negative. The dictionary therefore does not equate either measure with Anderson’s cash crop sales.
