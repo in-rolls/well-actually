@@ -1,5 +1,0 @@
-"coding","definition","villages","known_majority","definitely_no_majority","unresolved_majority","guaranteed_largest","largest_known_below_half","median_unknown_share","high_classification_coverage_villages","median_known_margin"
-"base","narrow",26620,15624,397,10599,16541,10996,0.1451024793007,11317,0.378826459939589
-"base","broad",28442,16447,437,11558,17546,11995,0.152754638931997,11619,0.367381388064681
-"curated","narrow",26620,16132,490,9998,17152,10488,0.123754298670221,12166,0.391670119218816
-"curated","broad",28442,16989,544,10909,18214,11453,0.130634327960398,12538,0.379783601518978

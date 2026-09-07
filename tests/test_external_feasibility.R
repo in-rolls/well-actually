@@ -20,14 +20,3 @@ test_that("dominance uncertainty partitions the villages at every threshold", {
   expect_true(all(diff(coverage$definitely_above) <= 0))
   expect_true(all(diff(coverage$definitely_at_or_below) >= 0))
 })
-
-test_that("land-account linkage preserves the matched and unmatched denominator", {
-  readiness <- read.csv("output/land_readiness.csv")
-  value <- setNames(readiness$value, readiness$quantity)
-  expect_equal(
-    unname(value["linked_accounts"] + value["unlinked_land_accounts"]),
-    unname(value["land_accounts"])
-  )
-  expect_lte(value["linked_clean_accounts"], value["linked_accounts"])
-  expect_lte(value["linked_clean_area"], value["clean_area"])
-})

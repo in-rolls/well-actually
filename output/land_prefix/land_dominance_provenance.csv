@@ -1,6 +1,0 @@
-"file","sha256"
-"/Users/soodoku/Documents/GitHub/land/data/records_accounts_landtype.parquet","e1712adf5c040ecd24b596ee3c46d1cfdfe2e93e4039d2ef2ce0851989d8ae14"
-"/Users/soodoku/Documents/GitHub/land/data/account.csv.gz","b034254d97505352bde646264768c98c35bdcd50eb3e0e2d24dbcc7fcaf55726"
-"/Users/soodoku/Documents/GitHub/land/data/caste_codes/caste_code_landrecords.dta","c26dc72f85f23dd36bac296aaa7b6cf8410401553137aec16df5cbeb38464a43"
-"/Users/soodoku/Documents/GitHub/land/crosswalk/caste_crosswalk_additions.tsv","bb122c000e61c3aa15725760d21c060db0ab93a5eab078f34472e81454944114"
-"output/land_account_locations_prefix.parquet","63bfffcd42882fea5975364a78399878f5a32af9f8d40538a9119679b56d21be"
