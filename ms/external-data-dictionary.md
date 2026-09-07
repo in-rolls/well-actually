@@ -1,6 +1,6 @@
 # External data: initial dictionary, recode ledger and join contract
 
-Status: initial inventory with definitions resolved for the separate [IHDS analysis plan](ihds-replication-plan.md). Source documents are the local ICPSR 36151 DS0002 and DS0012 codebooks and questionnaires, NSS 77 Schedule33.1 DDI, and ../land's processing notebooks. Outstanding definitions are explicit below.
+Data definitions for the [completed IHDS replication](ihds-replication.md), with availability and measurement limits for the other local datasets. Source documents are the local ICPSR 36151 DS0002 and DS0012 codebooks and questionnaires, NSS 77 Schedule33.1 DDI, and ../land's processing notebooks. Outstanding definitions are explicit below.
 
 | Construct | Source fields | Meaning / universe | Rule or unresolved issue |
 |---|---|---|---|
@@ -36,3 +36,25 @@ The frozen plan uses Hindu OBC/SC farm households, positive maximum owned acreag
 Household IDHH is unique; the full state–district–PSU village key is unique on DS12. The household-left join preserves42,152 rows; all3,789 rural UP/Bihar households link. DS14 participant records are aggregated before the village join and cannot multiply households. Four duplicate participant-key rows occur outside UP/Bihar and are excluded from roster aggregation; target-state participant keys are unique. The target195 villages all have a roster. Input SHA256 values are in `ihds_input_provenance.csv`; no household-level extract is redistributed.
 
 The outcome is the released FM22RSHH crop-value aggregate, which the user guide lists separately from residue and expenses. Its crop-row construction remains unavailable. INCCROP explicitly subtracts expenses and may be negative. The dictionary therefore does not equate either measure with Anderson’s cash crop sales.
+
+## Other available data
+
+The IHDS comparison has been executed; its estimates and sample restrictions are in the [replication report](ihds-replication.md). The following records describe additional data already inspected, not completed new outcome analyses.
+
+### Bihar land records (2022)
+
+The records collected in 2022 permit a separate measurement exercise: compute village ownership shares from recorded titles, contrast the largest group with an actual majority, and examine concentration, plot fragmentation and land type. Retain both narrow and broad agricultural definitions because upland `bhith` is mixed. Use recorded caste entries with the curated crosswalk additions and retain an explicit unclassified-area category; do not classify a person from a name just to fill the gap.
+
+The cached intermediate has 11,688,307 ownership accounts. Following the existing land analysis, removing the 50 accounts with total area above 10,000 acres leaves 11,688,257. The existing geography crosswalk links 7,402,631 of those accounts across 29,396 villages, covering 8.89 million of 13.82 million retained acres. This is partial coverage, not a complete village census established by the join. The stored caste categories also predate curated additions. The broad `uc` crosswalk category includes some Muslim jatis, so it cannot be equated with Hindu upper caste without using the recorded religious/caste information consistently.
+
+The land register does not contain landless households, realized crop outcomes, water purchases, or confirmed household residence in the village where a title is held. Administrative accounts are not necessarily people or households. The 2022 records cannot be treated as a baseline covariate for a 2011 or 1997 outcome. An external measurement validation requires an audited village-name/geographic crosswalk plus explicit treatment of date changes and unmatched areas. Do not replace missing survey geography with a district-wide exposure.
+
+
+### NSS 77 (2018–19)
+
+The repository contains the raw Nesstar source, DDI dictionary, and 35 converted block files for two visits, not just the household land summary. The Bihar first-visit extract contains 5,111 households. Crop blocks distinguish irrigated and unirrigated area and production and record sales quantities; irrigation-source categories are also available. This makes NSS useful for checking whether large revenue differences reflect physical output, crop mix, commercialization, or land denominators.
+
+A close buyer/owner mechanism replication still needs verified questionnaire item mappings for purchased water and pump ownership. Input and asset blocks use serial-number codes whose detailed meanings are not supplied by the variable labels alone. The questionnaire must establish these mappings before estimation. NSS household and village identifiers also require a separate, validated linkage to land records; a PSU serial is not a public revenue-village name. Verify the eligibility of the land and agricultural-output blocks separately rather than assume every household supplies farming outcomes.
+
+
+The executable inventories are `src/ihds_feasibility.R` and `src/land_readiness.R`; run `make external-feasibility` with `LAND_REPO` pointing to the local land repository. The land check uses arrow, data.table and bit64. Original observations remain in that repository.

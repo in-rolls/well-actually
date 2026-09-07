@@ -104,5 +104,5 @@ See [sources/README.md](sources/README.md) for cached-file provenance.
 [Research and writing opportunities arising from the review](ms/research-opportunities.md).
 
 [Village-classification sensitivity](ms/dominance-sensitivity.md) checks every single-village reassignment.
-[Completed IHDS replication](ms/ihds-replication.md): the main later-survey crop-value comparison is negative, with wide uncertainty; changing owned acreage to cultivated crop-season acreage changes the direction. It neither reproduces a stable positive gap nor decisively rules out the 45% benchmark. Run `make ihds-replication` with the local IHDS archive. [Additional data opportunities](ms/land-records-plan.md) cover NSS and Bihar land records.
+[Completed IHDS replication](ms/ihds-replication.md): the main later-survey crop-value comparison is negative, with wide uncertainty; changing owned acreage to cultivated crop-season acreage changes the direction. It neither reproduces a stable positive gap nor decisively rules out the 45% benchmark. Run `make ihds-replication` with the local IHDS archive. [Additional data and measurement limits](ms/external-data-dictionary.md#other-available-data) cover NSS and Bihar land records.
 [Agy audit and our adjudication](ms/independent-audit.md).

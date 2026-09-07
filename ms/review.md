@@ -197,7 +197,7 @@ The [magnitude and definition audit](magnitude-benchmarks.md) supplies primary-p
 
 Reversing each of the 90 village labels in turn leaves the baseline, district-adjusted, buyer interaction, and full nonowner-buyer village gap positive in every case. The district-adjusted confidence interval includes zero in 36 of these hypothetical cases; the buyer-interaction interval does so in three. These are tests of sensitivity to one uncertain label, not actual land-share threshold changes. See the [generated classification audit](dominance-sensitivity.md).
 
-The [independent replication feasibility note](land-records-plan.md) inventories IHDS-II, NSS 77, and 2022 Bihar land records. IHDS supplies contemporaneous village caste land-share reports and water-purchase and pump-ownership measures. Its released household outcomes differ from Anderson's sales measure, and many reported caste shares do not sum to the entire village area. No new-data outcome regression has been run.
+The [data documentation](external-data-dictionary.md) records the local IHDS-II, NSS 77, and 2022 Bihar land files, their coverage, and their measurement limits. The IHDS analysis has now been executed; its interpretation follows below.
 
 
 **Independent IHDS replication**
