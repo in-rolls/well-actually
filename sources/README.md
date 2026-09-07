@@ -24,3 +24,6 @@ Additional papers retrieved on 2026-09-06 for substantive benchmarks (PDFs and e
 - `asher-canals.pdf` and `.txt`: [Asher, Campion, Gollin and Novosad's May 1, 2024 working paper](https://paulnovosad.com/pdf/acgn-canals.pdf), especially the introduction and Section 6.1. This is the retrieved version, not a claim about final publication status.
 
 The benchmark note also cites [Sekhri (2014)](https://www.aeaweb.org/articles?id=10.1257/app.6.3.76), for which the publisher abstract was read; no full-paper audit is claimed.
+
+- `up-bihar-village-questionnaire.pdf` and `.txt`: [original village questionnaire](https://microdata.worldbank.org/catalog/276/download/11637), inspected printed pp. 1 and 8–9.
+- `up-bihar-metadata.xml`: [public DDI metadata](https://microdata.worldbank.org/metadata/export/276/ddi), inspected for PSULIST, caste rankings and physical-yield variable definitions. Raw survey observations require a login and have not been downloaded. These caches are excluded from git.
