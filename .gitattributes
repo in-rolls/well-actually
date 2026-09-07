@@ -1,0 +1,3 @@
+data/original/** -text -whitespace
+sources/previous-stata-output.txt -text -whitespace
+output/*.txt -whitespace

@@ -1,0 +1,267 @@
+                                                       ___  ____  ____  ____  ____(R)
+                                                      /__    /   ____/   /   ____/   
+                                                     ___/   /   /___/   /   /___/    
+                                                       Statistics/Data analysis      
+      
+      
+        ___  ____  ____  ____  ____ ®
+       /__    /   ____/   /   ____/      17.0
+      ___/   /   /___/   /   /___/       SE—Standard Edition
+      
+       Statistics and Data Science       Copyright 1985-2021 StataCorp LLC
+                                         StataCorp
+                                         4905 Lakeway Drive
+                                         College Station, Texas 77845 USA
+                                         800-STATA-PC        https://www.stata.com
+                                         979-696-4600        stata@stata.com
+      
+      Stata license: Unlimited-user network, expiring 20 Mar 2023
+      Serial number: 401709301716
+        Licensed to: Center for Information Technology
+                     University of Groningen
+      
+      Notes:
+            1. Unicode is supported; see help unicode_advice.
+            2. Maximum number of variables is set to 5,000; see help set_maxvar.
+      
+     1 . do "C:\Users\Noemi\AppData\Local\Temp\STD7288_000000.tmp"
+      
+     2 . 
+     3 . 
+     4 . * I am trying to replicate results from the first column of Table 3. According to program.txt, the results in Table 3 can be 
+      > replicated by opening household.dta and then running the code corresponding to Table 3 (so no pre-processing/cleaning is requ
+      > ired). So I open household.dta and summarize its content to get an idea of what's in it:
+     5 . use "C:\Users\Noemi\household.dta"
+      
+     6 . sum
+      
+          Variable |        Obs        Mean    Std. dev.       Min        Max
+      -------------+---------------------------------------------------------
+            hhcode |      1,666    7133.008    3497.341        201      13415
+           village |      1,666    71.21729    34.95776          2        134
+             caste |      1,666    4.018607     .859647          3          5
+            borrow |      1,666    .5636255    .4960842          0          1
+           bfhcast |      1,666    .1620648    .3686209          0          1
+      -------------+---------------------------------------------------------
+             bihar |      1,666    .4291717    .4951065          0          1
+          literate |      1,666    .4135654    .4926203          0          1
+           cropinc |      1,666    3296.444    10871.14          0     177000
+            totinc |      1,666     5451.17    11910.68         45     181967
+            caste4 |      1,666    .2611044    .4393686          0          1
+      -------------+---------------------------------------------------------
+            caste5 |      1,666    .3787515    .4852217          0          1
+          electric |      1,661    .5291993     .499297          0          1
+            hhelec |      1,666    17.56423    25.91988          0         90
+              bus3 |      1,651    3.901999    3.318496          0         20
+             tele3 |      1,615    6.508359    7.659866          0         48
+      -------------+---------------------------------------------------------
+               ps3 |      1,666    7.551621    4.870211          0         20
+              pds3 |      1,584    1.437689    1.929359          0         15
+             bank3 |      1,666    5.148139    4.687579          0         20
+              pps3 |      1,541    .6136924    .8927417          0          5
+               ms3 |      1,562    2.782202    2.230564          0         13
+      -------------+---------------------------------------------------------
+               ss3 |      1,609    5.298446     4.01931          0         20
+              phc3 |      1,633    5.343723    4.959386          0         40
+             hosp3 |      1,652    21.08202    14.58469          1         70
+             paddy |      1,666     .517407    .4998469          0          1
+             wheat |      1,666    .6488595    .4774701          0          1
+      -------------+---------------------------------------------------------
+            cereal |      1,666    .2929172    .4552374          0          1
+             pulse |      1,666    .3703481    .4830429          0          1
+              bulb |      1,666    .2154862    .4112827          0          1
+              seed |      1,666    .2064826    .4049024          0          1
+              cash |      1,666    .1434574    .3506439          0          1
+      -------------+---------------------------------------------------------
+           landirr |      1,666    59.44058    45.26248          0        100
+           ownpump |      1,666    .1362545    .3431616          0          1
+          tubewell |      1,666    .4417767    .4967476          0          1
+           totland |      1,666    2.082317    3.789084          0         59
+             canal |      1,666    .2202881    .4145653          0          1
+      -------------+---------------------------------------------------------
+             river |      1,666    .0420168    .2006877          0          1
+          buywater |      1,666    .5318127    .4991367          0          1
+          pricland |      1,666    64799.76    62008.04          0     440000
+           noflood |      1,666    .4591837    .4984809          0          1
+           noalkal |      1,666    .7310924    .4435249          0          1
+      -------------+---------------------------------------------------------
+             nolog |      1,666    .5780312    .4940219          0          1
+            nosoil |      1,666    .7412965    .4380538          0          1
+       cropincacre |      1,666    905.8853    2455.229          0      40000
+            domlow |      1,295    .5436293    .4982853          0          1
+         dlownpump |      1,295    .0949807    .2933015          0          1
+      -------------+---------------------------------------------------------
+        dlbuywater |      1,295    .3027027    .4596051          0          1
+             dist1 |      1,666    .0246098    .1549794          0          1
+             dist2 |      1,666    .0318127    .1755539          0          1
+             dist3 |      1,666    .0222089    .1474066          0          1
+             dist4 |      1,666    .0354142    .1848797          0          1
+      -------------+---------------------------------------------------------
+             dist5 |      1,666     .032413    .1771474          0          1
+             dist6 |      1,666    .0354142    .1848797          0          1
+             dist7 |      1,666     .030012    .1706715          0          1
+             dist8 |      1,666    .0270108    .1621635          0          1
+             dist9 |      1,666    .0234094    .1512452          0          1
+      -------------+---------------------------------------------------------
+            dist10 |      1,666    .0486194    .2151357          0          1
+            dist11 |      1,666    .0438175    .2047504          0          1
+            dist12 |      1,666     .042617    .2020528          0          1
+            dist13 |      1,666    .0318127    .1755539          0          1
+            dist14 |      1,666    .0384154    .1922545          0          1
+      -------------+---------------------------------------------------------
+            dist15 |      1,666    .0264106     .160401          0          1
+            dist16 |      1,666    .0336134    .1802861          0          1
+            dist17 |      1,666     .030012    .1706715          0          1
+            dist18 |      1,666     .032413    .1771474          0          1
+            dist19 |      1,666    .0348139    .1833633          0          1
+      -------------+---------------------------------------------------------
+            dist20 |      1,666    .0336134    .1802861          0          1
+            dist21 |      1,666     .045018    .2074059          0          1
+            dist22 |      1,666    .0318127    .1755539          0          1
+            dist23 |      1,666    .0912365    .2880316          0          1
+            dist24 |      1,666    .0870348    .2819707          0          1
+      -------------+---------------------------------------------------------
+            dist25 |      1,666    .0864346    .2810891          0          1
+            tenant |      1,666    .2358944     .424684          0          1
+          landlord |      1,666    .0648259    .2462924          0          1
+          dltenant |      1,295    .1266409    .3326988          0          1
+        dllandlord |      1,295    .0393822    .1945778          0          1
+      -------------+---------------------------------------------------------
+              area |      1,459     319.285    436.9505          3       3005
+         tolaparea |      1,459    .0264763    .1277893   .0007294          2
+      pmixdominant |      1,295    .4160374    .3540537          0          1
+      gwdevelopm~t |      1,666    43.48699    12.72936       18.5      58.48
+          rainfall |      1,666    1168.733    229.3581        902       2000
+      -------------+---------------------------------------------------------
+      gwavailabi~y |      1,666    95456.93    40112.88      23638     166755
+         dlbfhcast |      1,295    .0633205    .2436325          0          1
+           bfrelsc |      1,666    .1836735    .3873339          0          1
+         dlbfrelsc |      1,295    .1119691    .3154503          0          1
+      naturalwater |      1,666    .4345738    .4958498          0          1
+      
+     7 . 
+      end of do-file
+      
+     8 . do "C:\Users\Noemi\AppData\Local\Temp\STD7288_000000.tmp"
+      
+     9 . 
+    10 . /* The first line of code for Table 3 from program.txt is this: 
+      > regress cropincacre literate totland bihar caste4 caste5 domlow , cluster(village)  
+      > 
+      > This seems to correspond to the article's description of what we should see in column 1 of Table 3. Although I could not find
+      >  a variable description file in the replication package, the names of the variables are quite clear so one can make a corresp
+      > ondence:
+      > - the left hand side variable should be crop income per acre of total land of household, which is presumably the variable cro
+      > pincacre
+      > - the key right hand side variable of interest should be a dummy variable that equals 1 if a village is dominated by a lower 
+      > caste, and equals 0 if the village is instead dominated by an upper caste; this is presumably the variable domlow
+      > - other right hand side variables (i.e. controls) are:
+      > -- education measured by being literate, which is presumably the variable literate
+      > -- land ownership measured as total land, which is presumably the variable totland 
+      > -- caste identity, presumably measured by the variables caste4 caste5 which appear to be dummies. There is also a variable "c
+      > aste" in the dataset, that seems to be a categorical variable, I am assuming there should be a correspondence between this an
+      > d the dummies  
+      > -- state fixed effects: on page 244 the paper describes that the sample is from two states, Uttar Pradesh and Bihar. So bihar
+      >  is presumably a dummy variable that takes 1 for Bihar and 0 for Uttar Pradesh  
+      > - the paper describes that regression disturbance terms are clustered at the village level, which is in line with the syntax 
+      > cluster(village)
+      >  */
+    11 . * before running the analysis, just quickly checking my interpretation by checking whether domlow is indeed a dummy:
+    12 . tab domlow
+      
+           domlow |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        591       45.64       45.64
+                1 |        704       54.36      100.00
+      ------------+-----------------------------------
+            Total |      1,295      100.00
+      
+    13 . 
+      end of do-file
+      
+    14 . do "C:\Users\Noemi\AppData\Local\Temp\STD7288_000000.tmp"
+      
+    15 . * and by checking the relationship between caste, caste4 and caste5:
+    16 . tab caste caste4
+      
+                 |        caste4
+      Caste code |         0          1 |     Total
+      -----------+----------------------+----------
+        Back agr |       600          0 |       600 
+        Back oth |         0        435 |       435 
+        ST/SC    |       631          0 |       631 
+      -----------+----------------------+----------
+           Total |     1,231        435 |     1,666 
+      
+    17 . tab caste caste5
+      
+                 |        caste5
+      Caste code |         0          1 |     Total
+      -----------+----------------------+----------
+        Back agr |       600          0 |       600 
+        Back oth |       435          0 |       435 
+        ST/SC    |         0        631 |       631 
+      -----------+----------------------+----------
+           Total |     1,035        631 |     1,666 
+      
+    18 . 
+      end of do-file
+      
+    19 . do "C:\Users\Noemi\AppData\Local\Temp\STD7288_000000.tmp"
+      
+    20 . * and by checking whether bihar is indeed a dummy:
+    21 . tab bihar
+      
+           (mean) |
+            bihar |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        951       57.08       57.08
+                1 |        715       42.92      100.00
+      ------------+-----------------------------------
+            Total |      1,666      100.00
+      
+    22 . 
+      end of do-file
+      
+    23 . do "C:\Users\Noemi\AppData\Local\Temp\STD7288_000000.tmp"
+      
+    24 . * Note that I am writing this do file such that after running a command line I look at the output, then I move on to the next
+      >  steps. Now I have looked at the output of the above tabulations and I see that all looks good, so now I feel prepared to go 
+      > on and check whether results replicate by running the code given in program.txt:
+    25 . regress cropincacre literate totland bihar caste4 caste5 domlow , cluster(village) 
+      
+      Linear regression                               Number of obs     =      1,295
+                                                      F(6, 89)          =       8.40
+                                                      Prob > F          =     0.0000
+                                                      R-squared         =     0.1265
+                                                      Root MSE          =     1934.7
+      
+                                     (Std. err. adjusted for 90 clusters in village)
+      ------------------------------------------------------------------------------
+                   |               Robust
+       cropincacre | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+          literate |    255.033   141.6791     1.80   0.075    -26.48032    536.5464
+           totland |     58.521   18.43417     3.17   0.002     21.89269    95.14931
+             bihar |  -648.7745   216.8922    -2.99   0.004    -1079.735   -217.8142
+            caste4 |   -532.096   229.6506    -2.32   0.023    -988.4069   -75.78518
+            caste5 |  -826.5468    204.767    -4.04   0.000    -1233.414   -419.6792
+            domlow |   566.5337   209.0335     2.71   0.008     151.1887    981.8788
+             _cons |   1062.853   227.1293     4.68   0.000     611.5519    1514.154
+      ------------------------------------------------------------------------------
+      
+    26 . 
+      end of do-file
+      
+    27 . do "C:\Users\Noemi\AppData\Local\Temp\STD7288_000000.tmp"
+      
+    28 . /* Comparing the results to the replication criteria shows that:
+      > - the sample size is precisely 1295
+      > - the focal OLS coefficient is indeed 566.5 (when expressed in digits matching the precision level in the paper)
+      > - significance of the focal variable coefficient: it is indeed significant at the 1 percent level
+      > 
+      > So this is a successful and precise replication (all criteria are met precisely).
+      > */
+    29 . 
+    30 . * Since this was a success, there is no need for any more attempts. I will now simply put all the output to a txt file:
+    31 .  translate @Results outputlog.txt

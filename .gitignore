@@ -1,0 +1,11 @@
+.DS_Store
+.Rhistory
+.RData
+.R/library/
+renv/library/
+renv/staging/
+output/fits.rds
+output/*.log
+sources/*.pdf
+sources/paper.txt
+sources/working-paper-2005.txt
