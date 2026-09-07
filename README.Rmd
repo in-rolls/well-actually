@@ -48,11 +48,22 @@ The argument and all twelve review checks are in [the review](ms/review.md).
 
 These are reproduction and sensitivity results from the original sample, not an independent
 new-data replication. The IV percentile interval is not a weak-instrument-robust confidence set.
-The paper says lower-caste water buyers have yields **45% higher** in lower-caste-dominated
-villages (p. 253). That is not a 45% loss: 145 is 45% above 100, but 100 is 31% below 145.
-I reproduced the rupee coefficients but could not reproduce the calculation giving 45%.
-The outcome measures crop sales per owned acre, so these results do not directly measure
-physical yields or income that farmers knowingly give up.
+Anderson reports that lower-caste water buyers have **45% higher agricultural yields** in
+villages where lower castes own most of the land than in villages dominated by upper castes.
+But the measured outcome is **money from crops sold per acre owned**. Higher sales could reflect
+more production, different crops or prices, or selling more of the harvest instead of consuming it.
+The regressions reproduce a positive crop-sales gap; they do not directly measure a 45% increase
+in physical crop yields. The supplied code also does not show how the rupee estimates become 45%.
+
+Attributing the gap to caste barriers requires another step: establishing that other differences
+between the villages do not explain it. The buyer–seller pairs, water prices, and delivery records
+needed to investigate the proposed trading mechanism are absent from this dataset.
+
+The economic question is why profitable alternatives do not emerge. Nearby sellers, new wells,
+or shared irrigation could compete away some of the gap. Distance, installation costs, and unreliable
+contracts could prevent that, but the data do not show which obstacle binds or whether caste causes it.
+The [economics section of the review](ms/review.md) works through these possibilities and the evidence
+needed to distinguish them.
 
 The baseline uses **1,295 households in 90 villages**: 591 households in 48 high-caste-dominated
 villages and 704 in 42 lower-caste-dominated villages. Village samples range from 1 to 32 households,
