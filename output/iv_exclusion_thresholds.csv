@@ -1,0 +1,5 @@
+"pathway","interaction_loading","assumed_direct_effect_to_zero","outcome_unit"
+"natural_water",-0.967505398990251,-3637.71539396218,"annual_crop_sales_rupees_per_owned_acre"
+"village_area_100ha",-6.27851010099352,-560.564405732408,"annual_crop_sales_rupees_per_owned_acre"
+"dominance_natural_water",-1.2200518720262,-2884.72102239663,"annual_crop_sales_rupees_per_owned_acre"
+"dominance_area_100ha",-4.82765699450658,-729.030518873488,"annual_crop_sales_rupees_per_owned_acre"

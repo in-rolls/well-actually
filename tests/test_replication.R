@@ -101,3 +101,14 @@ test_that("paired IV bootstrap reproduces the independent earlier bootstrap", {
   expect_equal(unname(quantile(draws$iv, .025)), expected$percentile_lower, tolerance = 1e-7)
   expect_equal(unname(quantile(draws$iv, .975)), expected$percentile_upper, tolerance = 1e-7)
 })
+
+test_that("exclusion sensitivity nests the original IV estimate", {
+  tab <- read.csv("output/iv_exclusion_sensitivity.csv")
+  baseline <- tab[tab$assumed_direct_effect == 0, ]
+  expect_equal(baseline$interaction, rep(unname(coef(ivfit)["dlbuywater"]), nrow(baseline)))
+  thresholds <- read.csv("output/iv_exclusion_thresholds.csv")
+  expect_equal(
+    thresholds$interaction_loading * thresholds$assumed_direct_effect_to_zero,
+    rep(unname(coef(ivfit)["dlbuywater"]), nrow(thresholds))
+  )
+})
