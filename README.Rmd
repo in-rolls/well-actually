@@ -106,3 +106,5 @@ is distributed under the terms in [its license](data/original/LICENSE.txt).
 The [author’s final paper](https://drive.google.com/file/d/1GGvPbS3WOeyfbWfTIU2SI3_4DKJqL8Op/view)
 and [independent 2022 Stata reproduction](https://osf.io/h2u96/) provide the comparison sources.
 See [sources/README.md](sources/README.md) for cached-file provenance.
+
+[Research and writing opportunities arising from the review](ms/research-opportunities.md).
