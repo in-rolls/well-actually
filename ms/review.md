@@ -128,7 +128,7 @@ The completed work establishes successful reproduction of the principal regressi
 
 **Village sampling, weighting, and clustering**
 
-The paper says the original survey sampled 2,250 households in 120 villages across 25 districts (p. 245). Its short description does not specify the sampling strata or household selection probabilities. Random sampling of villages is not random assignment of caste dominance.
+Anderson used existing data from the 1997–98 World Bank survey of Uttar Pradesh and Bihar; she did not collect the survey herself. The questionnaire’s measurement limits and the paper’s subsequent variable construction are separate issues. The paper says the original survey sampled 2,250 households in 120 villages across 25 districts (p. 245). Its short description does not specify the sampling strata or household selection probabilities. Random sampling of villages is not random assignment of caste dominance.
 
 The baseline regression retains 1,295 households in 90 villages. There are 591 households in 48 high-caste-dominated villages and 704 in 42 lower-caste-dominated villages. Retained household counts have a median of 13 and range from 1 to 32. The largest village supplies 2.47% of observations; the ten largest supply 22.16%. These are counts in the analysis, not village populations. [Counts](../output/village_household_counts.csv).
 

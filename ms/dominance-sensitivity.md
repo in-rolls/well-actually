@@ -4,7 +4,7 @@
 
 
 
-The original village questionnaire asks informants to rank the important castes by total land owned and by average holding size (Section 1A, question 7). It does not record ownership percentages. Ranking the largest landowning group is a reasonable survey question; it requires less information than calculating an exact share. But the largest group can hold less than half. A hypothetical 40/35/25 split illustrates the distinction; it is not a measured split in these villages.
+Anderson used the existing 1997–98 World Bank survey of Uttar Pradesh and Bihar. She did not collect these village reports herself. That survey’s village questionnaire asks informants to rank the important castes by total land owned and by average holding size (Section 1A, question 7). It does not record ownership percentages. Ranking the largest landowning group is a reasonable survey question; it requires less information than calculating an exact share. But the largest group can hold less than half. A hypothetical 40/35/25 split illustrates the distinction; it is not a measured split in these villages.
 
 Anderson defines dominance as majority land ownership. She also says the observed comparison is largely between villages with upper-caste residents and villages without them (p. 242). That account could imply a pronounced difference rather than a delicate 49% versus 51% cutoff. The missing construction code prevents us from checking the correspondence. The rank-versus-share distinction is therefore a question to resolve, not proof that the village labels are erroneous or arbitrary.
 
