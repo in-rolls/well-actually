@@ -48,8 +48,23 @@ The argument and all twelve review checks are in [the review](ms/review.md).
 
 These are reproduction and sensitivity results from the original sample, not an independent
 new-data replication. The IV percentile interval is not a weak-instrument-robust confidence set.
-The headline 45% has no reproducible denominator in the supplied program; the review treats it
-as unverified rather than manufacturing a replacement percentage.
+The paper says lower-caste water buyers have yields **45% higher** in lower-caste-dominated
+villages (p. 253). That is not a 45% loss: 145 is 45% above 100, but 100 is 31% below 145.
+I reproduced the rupee coefficients but could not reproduce the calculation giving 45%.
+The outcome measures crop sales per owned acre, so these results do not directly measure
+physical yields or income that farmers knowingly give up.
+
+The baseline uses **1,295 households in 90 villages**: 591 households in 48 high-caste-dominated
+villages and 704 in 42 lower-caste-dominated villages. Village samples range from 1 to 32 households,
+with a median of 13. Equal total weight per village gives a baseline difference of ₹586 per owned
+acre, compared with ₹567 under the original household weighting. This is a sensitivity check;
+it does not recover the original survey weights.
+
+Following the checks discussed by Lal, Lockhart, Xu, and Zu, I compared IV and OLS on the same
+1,127 households in 80 villages and bootstrapped the complete estimation procedure.
+The IV interaction is 3.85 times the OLS interaction, but their difference is imprecisely estimated.
+The two bootstrap intervals disagree about whether zero is excluded. See the
+[IV results](output/iv_lal_bootstrap_summary.csv) and [explanation](ms/review.md).
 
 Run from the repository root:
 

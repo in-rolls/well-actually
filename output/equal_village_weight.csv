@@ -1,0 +1,4 @@
+"model","weighting","term","estimate","se","p"
+"T3_1","equal_total_weight_per_village","domlow",586.035008707623,207.373849775534,0.00581930175385017
+"T3_2","equal_total_weight_per_village","domlow",551.541643698288,193.221006281544,0.00536257183347173
+"T4_2","equal_total_weight_per_village","dlbuywater",826.389345623733,266.246614124276,0.00256102252742377

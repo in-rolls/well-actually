@@ -82,3 +82,22 @@ test_that("original archive matches its SHA-256 manifest", {
   expect_identical(unname(actual), manifest$sha256)
 })
 cat("All replication validation tests passed.\n")
+
+test_that("village counts preserve the regression sample", {
+  counts <- read.csv("output/village_household_counts.csv")
+  counts <- counts[counts$model == "T3_1", ]
+  expect_equal(sum(counts$households), 1295)
+  expect_equal(nrow(counts), 90L)
+  expect_equal(sum(counts$households[counts$domlow == 1]), 704)
+  expect_equal(range(counts$households), c(1L, 32L))
+})
+test_that("paired IV bootstrap reproduces the independent earlier bootstrap", {
+  draws <- read.csv("output/iv_paired_bootstrap_draws.csv")
+  previous <- read.csv("output/iv_pairs_bootstrap.csv")
+  expect_equal(nrow(draws), 1999L)
+  expect_true(all(is.finite(as.matrix(draws))))
+  expect_equal(draws$difference, draws$iv - draws$ols)
+  expected <- previous[previous$term == "dlbuywater", ]
+  expect_equal(unname(quantile(draws$iv, .025)), expected$percentile_lower, tolerance = 1e-7)
+  expect_equal(unname(quantile(draws$iv, .975)), expected$percentile_upper, tolerance = 1e-7)
+})

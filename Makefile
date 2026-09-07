@@ -6,6 +6,8 @@ run: sources/paper.txt
 	$(R) src/robustness.R
 	$(R) src/diagnostics.R
 	$(R) src/compare_published.R
+	$(R) src/village_design.R
+	$(R) src/iv_lal_review.R
 	$(R) src/figures.R
 	$(R) -e 'knitr::knit("README.Rmd", output = "README.md", quiet = TRUE)'
 
