@@ -112,3 +112,13 @@ test_that("exclusion sensitivity nests the original IV estimate", {
     rep(unname(coef(ivfit)["dlbuywater"]), nrow(thresholds))
   )
 })
+
+test_that("water-hauling budget uses consistent depth, area, and annual units", {
+  tab <- read.csv("output/irrigation_break_even.csv")
+  expect_equal(tab$litres_per_acre, tab$additional_depth_mm * 4046.8564224)
+  expect_equal(tab$whole_loads, ceiling(tab$litres_per_acre / 10000))
+  expect_equal(
+    tab$extra_cost_per_whole_load_covered * tab$whole_loads,
+    tab$annual_sales_difference_per_owned_acre
+  )
+})

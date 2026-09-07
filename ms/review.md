@@ -152,9 +152,11 @@ This distinction belongs in the verdict: an exclusion concern can weaken identif
 
 **The economics: what prevents farmers from trading around caste?**
 
-A large crop-sales gap raises a basic economic question. If supplying a lower-caste farmer with water creates substantial additional income, why would a seller leave that business unserved? Why would another seller not enter, a farmer not buy from a nearby village, or several farmers not share a well? The larger the available profit, the stronger those incentives become. A caste explanation must account for what prevents these responses.
+A large crop-sales gap raises a basic economic question. If supplying a lower-caste farmer with water creates substantial additional income, why would a seller leave that business unserved? Why would another seller not enter, a farmer not buy from a nearby village, or several farmers not share a well? The larger the available profit, the stronger those incentives become. A caste explanation must account for what prevents these responses and show that the obstruction is caste. These data provide limited evidence on those margins.
 
 The paper offers some economically coherent obstacles. Water must reach the field, so a well in the next village may be too far away even if its owner wants to sell. The paper describes delivery through channels and geographically restricted service areas. It also reports that a tubewell can cost roughly a year's average household income (pp. 253–254). A small farmer can therefore suffer from poor access without being able to finance a profitable substitute. Shared ownership could lower the capital burden but introduces its own financing, maintenance, and allocation problems; the data do not establish whether that option was feasible.
+
+These costs can exist in both types of village. Their existence alone cannot explain an effect of caste dominance. They may prevent farmers from escaping a caste-related disadvantage, but the explanation still needs a reason why caste changes access or contract performance. Alternatively, unequal geography or supplier availability could confound the estimated caste effect. Those are different claims and require different evidence.
 
 Nor does a buyer's gain automatically become a seller's profit. The seller may face pumping costs, scarce water, limited operating time, and competing demand from the seller's own fields. Some of these constraints can support high prices or restricted service. They can explain poor access, but do not by themselves explain why caste determines it.
 
@@ -169,3 +171,19 @@ The useful tests follow from the economic argument. Does the caste gap shrink wh
 The buyer-minus-owner comparison tests another implication. Buyers depend on trading water; pump owners can supply themselves. The paper's mechanism therefore suggests a larger village advantage for buyers. The estimated difference between the buyer and owner interactions is ₹462, with a 95% interval from −₹758 to ₹1,683. This sample does not establish that the buyer advantage exceeds the owner advantage. That weakens the mechanism's specificity; it is separate from the calculation behind the headline percentage.
 
 The economic objection is thus not that rational people can never suffer large losses. It is that large gains should attract efforts to capture them. Establishing caste as the cause requires evidence about the obstruction to entry, bargaining, or reliable contracting. Reproducing the sales regressions does not supply that missing evidence.
+
+
+**How far would the estimated gain pay for hauling water?**
+
+A tanker calculation starts with volume. One millimetre of water over an acre requires about 4,047 litres. The table assumes 10,000-litre loads and applies illustrative additional water depths to one acre. These depths are scenarios, not measured irrigation requirements or agronomic recommendations. The calculation uses the complete Table 4(2) buyer village contrast, ₹763 in annual crop sales per owned acre, rather than the buyer interaction alone or the unsupported percentage conversion.
+
+| Additional water depth | Litres per acre | Whole 10,000-litre loads | Extra cost per load the ₹763 sales gain could cover |
+|---|---:|---:|---:|
+| 10 mm | 40,469 | 5 | ₹153 |
+| 25 mm | 101,171 | 11 | ₹69 |
+| 50 mm | 202,343 | 21 | ₹36 |
+| 100 mm | 404,686 | 41 | ₹19 |
+
+These are survey-period rupees and break-even calculations, not tanker-price quotes. They assume the whole estimated sales difference is recoverable, the watered acre corresponds to an owned acre, no other production costs increase, and existing water payments are not saved. If hauling replaces paid groundwater, those avoided payments would also contribute to the budget; extra production costs would reduce it. Multiple watering rounds would consume more of the annual budget. The regression uncertainty is substantial: its 95% interval for the sales difference is ₹146–₹1,379. At 50 mm, that translates into roughly ₹7–₹66 per whole load under the same assumptions. It does not include uncertainty about water requirements or causal identification. [Reproducible calculations](../output/irrigation_break_even.csv).
+
+The paper supplies neither tanker tariffs nor the additional water quantity needed to recover the sales gap. We therefore cannot conclude that hauling would or would not have been profitable. Nor should tankers stand in for every alternative: a nearby pipe or channel could have a different cost, and a small timely watering might have a different return from supplying an entire season. The empirical question remains whether a feasible profitable alternative was blocked by caste.

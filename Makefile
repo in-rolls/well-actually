@@ -9,6 +9,7 @@ run: sources/paper.txt
 	$(R) src/village_design.R
 	$(R) src/iv_lal_review.R
 	$(R) src/iv_exclusion_sensitivity.R
+	$(R) src/irrigation_budget.R
 	$(R) src/figures.R
 	$(R) -e 'knitr::knit("README.Rmd", output = "README.md", quiet = TRUE)'
 
